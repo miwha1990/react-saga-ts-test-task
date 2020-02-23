@@ -1,18 +1,26 @@
 import * as React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Redirect, Switch } from 'react-router';
+import CV from '../pages/CV';
+import Login from '../pages/Login';
 import NavBar from '../components/NavBar';
-import Counter from '../pages/Counter';
-import Hello from '../pages/Hello';
-import Home from '../pages/Home';
 import NoMatch from '../pages/NoMatch';
+
+const user = localStorage.getItem('user');
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+    <Route {...rest} render={(props) => (
+        user
+            ? <Component {...props} />
+            : <Redirect to='/login' />
+    )} />
+);
 
 const routes = (
   <div>
     <NavBar />
     <Switch>
-      <Route exact={true} path="/" component={Home} />
-      <Route path="/hello" component={Hello} />
-      <Route path="/counter" component={Counter} />
+      <PrivateRoute exact={true} path='/' component={CV} />
+      <Route path="/login" component={Login} />
       <Route component={NoMatch} />
     </Switch>
   </div>

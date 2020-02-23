@@ -8,6 +8,7 @@
     ]
   },
   "rules": {
+    "ordered-imports": false,
     "eofline": true,
     "jsx-no-lambda": false,
     "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],

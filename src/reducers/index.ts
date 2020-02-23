@@ -1,20 +1,12 @@
-import { RouterState } from 'connected-react-router';
-import { localizeReducer } from 'react-localize-redux';
 import { combineReducers } from 'redux';
-import { counterReducer, ICounterReducer } from './counter';
-import themeReducer from './theme';
+import { userReducer, IUserReducer } from './user';
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
-  localize: localizeReducer,
-  theme: themeReducer
+  user: userReducer
 });
 
 export interface IState {
-  counter: ICounterReducer,
-  languageSelection: any,
-  router: RouterState,
-  theme: any
+  user: IUserReducer
 }
 
 export default rootReducer;

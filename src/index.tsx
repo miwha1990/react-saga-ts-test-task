@@ -2,7 +2,6 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { LocalizeProvider } from 'react-localize-redux';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from "redux-saga";
@@ -43,9 +42,7 @@ class Main extends React.Component<any, any> {
   public render() {
     return (
       <Provider store={store}>
-        <LocalizeProvider store={this.state.store}>
           <App history={history} />
-        </LocalizeProvider>
       </Provider>
     );
   }

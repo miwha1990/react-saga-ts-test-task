@@ -1,7 +1,7 @@
 
 import { createStyles, Theme } from '@material-ui/core/styles';
 const drawerWidth = 240;
-export const styles = ({ breakpoints, colors, transparentBackground, palette, mixins }: Theme) =>
+export const styles = ({ breakpoints, palette, mixins }: Theme) =>
   createStyles({
     drawerPaper: {
       width: drawerWidth,
@@ -13,10 +13,6 @@ export const styles = ({ breakpoints, colors, transparentBackground, palette, mi
       [breakpoints.down('md')]: {
         color: palette.primary.light
       },
-      '&:hover': {
-        backgroundColor: transparentBackground.light
-      },
-      color: colors.primaryText,
       textTransform: 'capitalize'
     },
     flex: {
@@ -29,14 +25,8 @@ export const styles = ({ breakpoints, colors, transparentBackground, palette, mi
       [breakpoints.down('md')]: {
         color: palette.primary.light
       },
-      '&.active': {
-        backgroundColor: transparentBackground.dark
-      },
-      '&:hover': {
-        backgroundColor: transparentBackground.light
-      },
       borderRadius: '3px',
-      color: colors.primaryText,
+      color: 'white',
       margin: '0 3px',
       padding: '5px 10px',
       textDecoration: 'none'
